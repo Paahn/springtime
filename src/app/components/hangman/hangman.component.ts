@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { AlphabetComponent } from '../alphabet/alphabet.component';
 
 @Component({
   selector: 'app-hangman',
   standalone: true,
-  imports: [],
+  imports: [AlphabetComponent],
   templateUrl: './hangman.component.html',
   styleUrl: './hangman.component.scss'
 })
@@ -12,6 +13,7 @@ export class HangmanComponent {
   private word = '';
   public hiddenWord = '';
   private guessedLetters = '';
+  public incorrectGuessedLetters = '';
   public incorrectGuesses = 0;
 
   public constructor() {
@@ -41,6 +43,9 @@ export class HangmanComponent {
       }
       this.hiddenWord = newHiddenWord;
     } else {
+      if (!this.incorrectGuessedLetters.includes(letter)) {
+        this.incorrectGuessedLetters += letter;
+      }
       this.incorrectGuesses++;
     }
     this.guessedLetters += letter;
