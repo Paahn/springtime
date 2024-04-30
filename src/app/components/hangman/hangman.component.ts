@@ -36,7 +36,8 @@ export class HangmanComponent {
     this.setWinningBackground.emit(false);
   }
 
-  public guessLetter(letter: string) {
+  public guessLetter(guessedLetter: string) {
+    let letter = guessedLetter.toLowerCase();
     if (this.wordGuessed()) {
       console.log('You already guessed the word!');
       return;
