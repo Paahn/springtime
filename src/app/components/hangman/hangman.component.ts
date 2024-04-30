@@ -21,7 +21,7 @@ export class HangmanComponent {
     this.startNewGame();
   }
 
-  public startNewGame() {
+  public startNewGame(): void {
     this.hiddenWord = '';
     this.word = this.words[Math.floor(Math.random() * this.words.length)];
     for (let i = 0; i < this.word.length; i++) {
@@ -35,7 +35,7 @@ export class HangmanComponent {
     this.setWinningBackground.emit(false);
   }
 
-  public guessLetter(guessedLetter: string) {
+  public guessLetter(guessedLetter: string): void {
     let letter = guessedLetter.toLowerCase();
     if (this.wordGuessed()) {
       console.log('You already guessed the word!');
@@ -63,12 +63,11 @@ export class HangmanComponent {
     this.guessedLetters += letter;
   }
 
-  public wordGuessed() {
-    console.log("remaining to guess: ", this.lettersRemainingToGuess());
+  public wordGuessed(): boolean {
     return this.lettersRemainingToGuess() === 0;
   }
 
-  private lettersRemainingToGuess() {
+  private lettersRemainingToGuess(): number {
     console.log(this.hiddenWord.replace(/_/g, '').length);
     return this.word.length - this.hiddenWord.replace(/_/g, '').length;
   }
