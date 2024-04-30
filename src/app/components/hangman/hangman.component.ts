@@ -33,6 +33,7 @@ export class HangmanComponent {
     }
     this.guessedLetters = '';
     this.incorrectGuesses = 0;
+    this.incorrectGuessedLetters = ''
     this.setWinningBackground.emit(false);
   }
 
