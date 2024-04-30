@@ -1,5 +1,7 @@
 # Springtime
 
+Live project: https://springtime-7047d.web.app/ . Deployed to [Firebase](https://firebase.google.com/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
 
 ## Development server
