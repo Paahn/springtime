@@ -1,6 +1,9 @@
 
 <div class="alphabet">
   <div *ngFor="let letter of alphabet">
-    <span class="letter" [class.crossed-out]="guessedLetters.includes(letter)" (click)="onLetterClick(letter)">{{ letter }}</span>
+    <span class="letter"
+          [class.crossed-out]="guessedLetters.includes(letter)"
+          (click)="onLetterClick(letter)">
+          {{ letter }}</span>
   </div>
 </div>

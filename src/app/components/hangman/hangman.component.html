@@ -1,6 +1,7 @@
 <div class="hangman">
   <p class="hiddenWord">{{ hiddenWord }}</p>
-  <app-alphabet [guessedLetters]="guessedLetters" (letterClicked)="guessLetter($event)"></app-alphabet>
+  <app-alphabet [guessedLetters]="guessedLetters"
+                (letterClicked)="guessLetter($event)"></app-alphabet>
   <p class="incorrect">Incorrect guesses: {{ incorrectGuesses }}</p>
   <button (click)="startNewGame()">New Game</button>
 </div>
