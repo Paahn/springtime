@@ -13,7 +13,7 @@ export class AlphabetComponent {
   @Output() letterClicked = new EventEmitter<string>();
   public alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
-  public onLetterClick(letter: string) {
+  public onLetterClick(letter: string): void {
     this.letterClicked.emit(letter);
   }
 }
