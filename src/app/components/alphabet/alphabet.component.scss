@@ -2,8 +2,15 @@
   display: flex;
   justify-content: space-between;
 
+  .letter {
+    margin: 2px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+
   .crossed-out {
   opacity: 0.2;
-}
+  }
 }
 

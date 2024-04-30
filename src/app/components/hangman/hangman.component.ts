@@ -13,8 +13,8 @@ export class HangmanComponent {
   private words = ['spring is just around the corner'];
   private word = '';
   public hiddenWord = '';
-  private guessedLetters = '';
-  public incorrectGuessedLetters = '';
+  public guessedLetters = '';
+  private incorrectGuessedLetters = '';
   public incorrectGuesses = 0;
 
   public constructor() {

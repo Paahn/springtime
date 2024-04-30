@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {NgFor} from '@angular/common';
 
 @Component({
@@ -9,6 +9,11 @@ import {NgFor} from '@angular/common';
   styleUrl: './alphabet.component.scss'
 })
 export class AlphabetComponent {
-  @Input() public incorrectGuessedLetters: string | '' = '';
+  @Input() public guessedLetters: string | '' = '';
+  @Output() letterClicked = new EventEmitter<string>();
   public alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+  public onLetterClick(letter: string) {
+    this.letterClicked.emit(letter);
+  }
 }

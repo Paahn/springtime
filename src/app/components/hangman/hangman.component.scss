@@ -7,21 +7,16 @@
     color: #333;
     margin-bottom: 10px;
 
+    &.hiddenWord {
+      margin-bottom: 20px;
+    }
+
     &.incorrect {
       padding: 10px;
       background-color: #92a1b1;
       opacity: 0.9;
       border-radius: 5px;
     }
-  }
-
-  input {
-    padding: 10px;
-    font-size: 1em;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    width: 200px;
   }
 
   button {
