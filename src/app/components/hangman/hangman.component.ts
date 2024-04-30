@@ -38,7 +38,6 @@ export class HangmanComponent {
   public guessLetter(guessedLetter: string): void {
     let letter = guessedLetter.toLowerCase();
     if (this.wordGuessed()) {
-      console.log('You already guessed the word!');
       return;
     }
     if (this.word.includes(letter)) {
@@ -68,7 +67,6 @@ export class HangmanComponent {
   }
 
   private lettersRemainingToGuess(): number {
-    console.log(this.hiddenWord.replace(/_/g, '').length);
     return this.word.length - this.hiddenWord.replace(/_/g, '').length;
   }
 }
