@@ -25,11 +25,9 @@ export class HangmanComponent {
     this.hiddenWord = '';
     this.word = this.words[Math.floor(Math.random() * this.words.length)];
     for (let i = 0; i < this.word.length; i++) {
-      if (this.word[i] === ' ') {
-        this.hiddenWord += ' ';
-      } else {
-        this.hiddenWord += '_';
-      }
+      this.hiddenWord += this.word[i] === ' '
+      ? ' '
+      : '_'
     }
     this.guessedLetters = '';
     this.incorrectGuesses = 0;
