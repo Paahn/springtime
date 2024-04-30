@@ -1,5 +1,5 @@
 <div class="app">
   <app-header></app-header>
-  <app-hangman></app-hangman>
+  <app-hangman (setWinningBackground)="setBackgroundImage($event)"></app-hangman>
   <router-outlet></router-outlet>
 </div>

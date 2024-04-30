@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { AlphabetComponent } from '../alphabet/alphabet.component';
 
 @Component({
@@ -9,7 +9,8 @@ import { AlphabetComponent } from '../alphabet/alphabet.component';
   styleUrl: './hangman.component.scss'
 })
 export class HangmanComponent {
-  private words = ['cherry blossoms', 'spring', 'favorite', 'season'];
+  @Output() public setWinningBackground = new EventEmitter<boolean>();
+  private words = ['spring is just around the corner'];
   private word = '';
   public hiddenWord = '';
   private guessedLetters = '';
@@ -25,6 +26,7 @@ export class HangmanComponent {
     this.hiddenWord = '_'.repeat(this.word.length);
     this.guessedLetters = '';
     this.incorrectGuesses = 0;
+    this.setWinningBackground.emit(false);
   }
 
   public guessLetter(letter: string) {
@@ -42,6 +44,9 @@ export class HangmanComponent {
         }
       }
       this.hiddenWord = newHiddenWord;
+      if (this.wordGuessed()) {
+        this.setWinningBackground.emit(true);
+      }
     } else {
       if (!this.incorrectGuessedLetters.includes(letter)) {
         this.incorrectGuessedLetters += letter;

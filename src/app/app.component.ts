@@ -12,4 +12,12 @@ import { HangmanComponent } from './components/hangman/hangman.component';
 })
 export class AppComponent {
   title = 'time for hangman';
+
+  public setBackgroundImage(winning: boolean) {
+    if (winning) {
+      document.body.className = 'winning-background';
+    } else {
+      document.body.className = 'app';
+    }
+  }
 }
